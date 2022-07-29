@@ -1,0 +1,20 @@
+{% extends "guess_estate_price/base.html" %}
+{% load static %}
+
+{% block head %}
+<link href="{% static 'guess_estate_price/css/forms' %}">
+{% endblock%}
+
+{% block body %}
+{% if answer %}
+<h1>Стоимость: {{ answer }}</h1>
+{% endif %}
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  {% if form %}
+    <input type="submit" value="Отправить"/>
+  {% endif %}
+</form>
+<a href="{% url 'main' %}" class="gradient-button">Назад</a>
+{% endblock %}

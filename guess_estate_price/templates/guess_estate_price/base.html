@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Оценка недвижимости</title>
+    {% load static %}
+    <link href="{% static 'guess_estate_price/css/styles.css' %}" rel="stylesheet">
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+
+{% block body %}
+<h1>Этот сервис выполнен в качестве интерфейса для тестового задания компании Esoft.<br>
+    Оценка объектов недвижимости с помощью методов машинного обучения.<br>
+    Для того, чтобы загрузить данные из csv файла нажмите "Файл".<br>
+    Для того, чтобы ввести данные вручную нажмите "Вручную".<br>
+    Ширшов Никита<br>
+</h1>
+<a href="{% url 'hand' %}" class="gradient-button">Вручную</a>
+<a href="{% url 'import' %}" class="gradient-button">Файл</a>
+{% endblock %}
+</body>
+</html>
